@@ -90,3 +90,18 @@ def test_incomplete_login_file_is_fatal(tmp_path):
     token_file.write_text('{"client_id": "x"}')
     with pytest.raises(fetch.FatalError, match="missing client_secret, refresh_token"):
         fetch.load_token(str(token_file))
+
+
+def test_login_without_tasks_permission_shows_events_without_a_warning(monkeypatch):
+    calls = []
+
+    def fake_pages(url, params, access_token):
+        calls.append(url)
+        return [{"id": "cal-1", "summary": "Work", "selected": True}] if url.endswith("calendarList") else []
+
+    monkeypatch.setattr(fetch, "load_token", lambda path: {})
+    monkeypatch.setattr(fetch, "refresh_access_token", lambda token: ("access", {"calendar.readonly"}))
+    monkeypatch.setattr(fetch, "get_all_pages", fake_pages)
+    result = fetch.fetch_everything(date(2026, 11, 1), date(2026, 11, 30), "unused")
+    assert result["warnings"] == []
+    assert not any("tasks" in url for url in calls)
