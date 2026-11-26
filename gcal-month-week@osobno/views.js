@@ -22,7 +22,9 @@ function chipOpacity(item, onPastDay) {
 }
 
 function makeLabel(text, styleClass, {wrap = false, style = ''} = {}) {
-    const label = new St.Label({text, style_class: styleClass, style});
+    const label = new St.Label({text, style_class: styleClass});
+    if (style) // an empty style string makes St log a parser error
+        label.set_style(style);
     label.clutter_text.set_ellipsize(wrap ? Pango.EllipsizeMode.NONE : Pango.EllipsizeMode.END);
     if (wrap) {
         label.clutter_text.set_line_wrap(true);
