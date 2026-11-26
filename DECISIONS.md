@@ -14,3 +14,4 @@
 | 2026-11-26 | Owner: events only, no Tasks. A login without the Tasks permission shows events with no warning | Declining Tasks is a choice, not an error; authorize.py already reports what was granted |
 | 2026-11-26 | Never pass `style: ''` to an St widget | St logs a parser error for an empty style on every render |
 | 2026-11-26 | Desklet ID `gcal-month-week@danielvazdar` (was `@osobno`) | The suffix is the author by Cinnamon convention; "osobno" meant nothing outside the owner's folder names |
+| 2026-11-26 | Right-click menu opens at the mouse, clamped to the monitor (overrides the menu's `_calculatePosition`) | Cinnamon only checks for room on the right, then flips left without clamping: a full-width desklet pushed its menu off-screen |
