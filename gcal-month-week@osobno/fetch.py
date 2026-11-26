@@ -225,11 +225,10 @@ def fetch_everything(first_day: date, last_day: date, token_path: str) -> dict:
     FetchJob = tuple[str, Callable[[dict, date, date, str], list[dict]], dict]
     jobs: list[FetchJob] = [(f"Calendar '{c.get('summaryOverride') or c.get('summary')}'", fetch_calendar_events, c)
             for c in calendars]
+    # Tasks are optional: a login without the Tasks permission simply shows events only.
     if TASKS_SCOPE in granted_scopes:
         task_lists = get_all_pages(f"{TASKS_API}/users/@me/lists", {"maxResults": "100"}, access_token)
         jobs += [(f"Task list '{t.get('title')}'", fetch_task_list, t) for t in task_lists]
-    else:
-        warnings.append("Tasks not connected yet")
 
     items: list[dict] = []
     with ThreadPoolExecutor(max_workers=MAX_PARALLEL_REQUESTS) as pool:

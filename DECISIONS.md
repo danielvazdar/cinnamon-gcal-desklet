@@ -11,3 +11,4 @@
 | 2026-11-26 | Month chips: time inline, 1–2 lines, "+N more" opens the week; duplicates across calendars shown once | First build cut titles after ~6 letters; two holiday calendars doubled holidays |
 | 2026-11-26 | Line height and char width measured on stage | 1.1 text scaling made planned 2-line chips collapse to 1 |
 | 2026-11-26 | Public repo, MIT (Daniel asked for public) | Useful to other Mint users |
+| 2026-11-26 | Daniel: events only, no Tasks. His widget keeps the login copied from gcalendar (calendar-only). A login without the Tasks permission shows events with no warning | Declining Tasks is a choice, not an error; authorize.py already reports what was granted |
