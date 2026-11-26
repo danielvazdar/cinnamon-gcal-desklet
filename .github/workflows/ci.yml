@@ -1,0 +1,29 @@
+name: ci
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: pip install -r requirements-dev.txt
+      - run: pytest -q tests
+        env:
+          TZ: Europe/Zagreb
+      - run: ruff check .
+      - run: mypy --ignore-missing-imports gcal-month-week@osobno/fetch.py gcal-month-week@osobno/authorize.py
+      - run: node --test tests/*.test.js
+      - uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

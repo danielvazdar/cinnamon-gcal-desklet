@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+# Google login material never goes in git
+client_secret*.json
+token.json
+# Account register: names the owner's Google account, kept local only
+docs/THIRD_PARTY_ACCOUNTS.md

@@ -1,0 +1,90 @@
+/* Dark glass. Sizes that affect layout maths are set inline from layout.js sizesFor(). */
+
+.gcal-root {
+    border-radius: 22px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background-gradient-direction: vertical;
+    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.45);
+    color: rgba(255, 255, 255, 0.92);
+}
+
+/* ---------- header */
+.gcal-header { spacing: 6px; }
+.gcal-title { font-size: 1.6em; font-weight: 600; color: #ffffff; padding: 0 4px; }
+.gcal-status { font-size: 0.85em; color: rgba(255, 255, 255, 0.45); padding: 0 6px; }
+.gcal-status:problem { color: #fdd663; }
+
+.gcal-icon-button { border-radius: 999px; padding: 6px; }
+.gcal-icon-button:hover { background-color: rgba(255, 255, 255, 0.10); }
+.gcal-icon-button:active { background-color: rgba(255, 255, 255, 0.18); }
+.gcal-icon { icon-size: 16px; color: rgba(255, 255, 255, 0.80); }
+
+.gcal-pill { border-radius: 999px; padding: 4px 14px; border: 1px solid rgba(255, 255, 255, 0.20); }
+.gcal-pill:hover { background-color: rgba(255, 255, 255, 0.10); }
+.gcal-pill:active { background-color: rgba(255, 255, 255, 0.18); }
+.gcal-pill-text { font-size: 0.92em; font-weight: 500; }
+
+.gcal-tabs { background-color: rgba(255, 255, 255, 0.07); border-radius: 999px; padding: 3px; spacing: 2px; }
+.gcal-tab { border-radius: 999px; padding: 4px 16px; }
+.gcal-tab:hover { background-color: rgba(255, 255, 255, 0.08); }
+.gcal-tab:checked { background-color: rgba(138, 180, 248, 0.95); }
+.gcal-tab-text { font-size: 0.92em; font-weight: 500; color: rgba(255, 255, 255, 0.72); }
+.gcal-tab:checked .gcal-tab-text { color: #0b1a33; font-weight: 600; }
+
+/* ---------- month grid */
+.gcal-weekday { font-size: 0.78em; font-weight: 600; color: rgba(255, 255, 255, 0.50); }
+
+.gcal-cell {
+    background-color: rgba(255, 255, 255, 0.045);
+    border: 1px solid rgba(255, 255, 255, 0.0);
+    border-radius: 10px;
+}
+.gcal-cell.is-past { background-color: rgba(255, 255, 255, 0.025); }
+.gcal-cell.is-other-month { background-color: rgba(255, 255, 255, 0.0); }
+.gcal-cell.is-today { background-color: rgba(138, 180, 248, 0.13); border: 1px solid rgba(138, 180, 248, 0.45); }
+
+.gcal-day-number { border-radius: 999px; }
+.gcal-day-number:hover { background-color: rgba(255, 255, 255, 0.12); }
+.gcal-day-number-text { font-weight: 600; color: rgba(255, 255, 255, 0.88); }
+.is-past .gcal-day-number-text { color: rgba(255, 255, 255, 0.50); }
+.is-other-month .gcal-day-number-text { color: rgba(255, 255, 255, 0.28); }
+.gcal-day-number.is-today { background-color: #8ab4f8; }
+.gcal-day-number.is-today .gcal-day-number-text { color: #0b1a33; }
+
+/* The 1px border is part of the size maths in layout.js (chipBorder). */
+.gcal-chip {
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.0);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+.gcal-chip-bar { border-radius: 2px; }
+.gcal-chip:hover { background-color: rgba(255, 255, 255, 0.13); }
+.gcal-chip-text { color: rgba(255, 255, 255, 0.93); }
+.gcal-chip-filled .gcal-chip-text { font-weight: 500; }
+.gcal-chip-filled:hover { border-color: rgba(255, 255, 255, 0.65); }
+
+.gcal-more { border-radius: 5px; }
+.gcal-more:hover { background-color: rgba(255, 255, 255, 0.10); }
+.gcal-more-text { font-size: 0.88em; font-weight: 600; color: rgba(255, 255, 255, 0.60); }
+
+/* ---------- week columns */
+.gcal-week-column {
+    background-color: rgba(255, 255, 255, 0.045);
+    border: 1px solid rgba(255, 255, 255, 0.0);
+    border-radius: 12px;
+}
+.gcal-week-column.is-past { background-color: rgba(255, 255, 255, 0.025); }
+.gcal-week-column.is-today { background-color: rgba(138, 180, 248, 0.13); border: 1px solid rgba(138, 180, 248, 0.45); }
+.gcal-week-header { padding: 2px 2px 6px 2px; }
+
+.gcal-week-chip {
+    border-radius: 7px;
+    padding: 5px 7px 6px 6px;
+    border: 1px solid rgba(255, 255, 255, 0.0);
+    background-color: rgba(255, 255, 255, 0.07);
+}
+.gcal-week-chip:hover { background-color: rgba(255, 255, 255, 0.13); }
+.gcal-week-chip.gcal-chip-filled:hover { border-color: rgba(255, 255, 255, 0.60); }
+.gcal-week-time { font-size: 0.85em; font-weight: 500; color: rgba(255, 255, 255, 0.60); }
+.gcal-week-title { font-weight: 500; color: rgba(255, 255, 255, 0.95); }
+.gcal-week-empty { color: rgba(255, 255, 255, 0.25); padding: 4px; }

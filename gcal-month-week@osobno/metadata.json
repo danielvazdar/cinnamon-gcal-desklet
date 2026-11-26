@@ -1,0 +1,8 @@
+{
+    "uuid": "gcal-month-week@osobno",
+    "name": "Google Calendar: Month & Week",
+    "description": "Month grid or 7-day week with your Google Calendar events and Google Tasks",
+    "prevent-decorations": true,
+    "max-instances": 1,
+    "cinnamon-version": ["6.6"]
+}
