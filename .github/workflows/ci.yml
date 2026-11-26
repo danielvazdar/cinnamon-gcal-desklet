@@ -22,7 +22,7 @@ jobs:
         env:
           TZ: Europe/Zagreb
       - run: ruff check .
-      - run: mypy --ignore-missing-imports gcal-month-week@osobno/fetch.py gcal-month-week@osobno/authorize.py
+      - run: mypy --ignore-missing-imports gcal-month-week@danielvazdar/fetch.py gcal-month-week@danielvazdar/authorize.py
       - run: node --test tests/*.test.js
       - uses: gitleaks/gitleaks-action@v2
         env:

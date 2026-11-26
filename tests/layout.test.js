@@ -1,6 +1,6 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
-const layout = require('../gcal-month-week@osobno/layout.js');
+const layout = require('../gcal-month-week@danielvazdar/layout.js');
 
 const MONDAY = 1;
 const SUNDAY = 0;

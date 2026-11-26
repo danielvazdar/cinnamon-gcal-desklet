@@ -37,7 +37,7 @@ Google wants each user of a home-made app like this to bring their own OAuth cli
 5. Run, and allow access in the browser window that opens:
 
    ```sh
-   python3 ~/.local/share/cinnamon/desklets/gcal-month-week@osobno/authorize.py ~/Downloads/client_secret_*.json
+   python3 ~/.local/share/cinnamon/desklets/gcal-month-week@danielvazdar/authorize.py ~/Downloads/client_secret_*.json
    ```
 
 6. Click the refresh icon on the widget.
@@ -55,7 +55,7 @@ python3 -m venv .venv && .venv/bin/pip install -r requirements-dev.txt
 .venv/bin/pytest -q tests && .venv/bin/ruff check . && node --test tests/*.test.js
 # reload the running widget after a change:
 gdbus call --session --dest org.Cinnamon --object-path /org/Cinnamon \
-  --method org.Cinnamon.ReloadXlet 'gcal-month-week@osobno' 'DESKLET'
+  --method org.Cinnamon.ReloadXlet 'gcal-month-week@danielvazdar' 'DESKLET'
 ```
 
 `layout.js` (dates, sizes, what fits in a cell) is plain JavaScript and tested with Node.

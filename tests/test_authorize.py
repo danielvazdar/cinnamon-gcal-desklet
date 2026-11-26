@@ -8,7 +8,7 @@ import urllib.parse
 
 import pytest
 
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "gcal-month-week@osobno"))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "gcal-month-week@danielvazdar"))
 import authorize
 
 
