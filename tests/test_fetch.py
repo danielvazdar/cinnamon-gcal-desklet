@@ -4,7 +4,7 @@ from datetime import date
 
 import pytest
 
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "gcal-month-week@osobno"))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "gcal-month-week@danielvazdar"))
 import fetch
 
 CALENDAR_COLOR = "#039be5"

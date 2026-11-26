@@ -12,7 +12,7 @@ const Cinnamon = imports.gi.Cinnamon;
 const Layout = require('./layout');
 const Views = require('./views');
 
-const UUID = 'gcal-month-week@osobno';
+const UUID = 'gcal-month-week@danielvazdar';
 const MAX_CACHED_RANGES = 6;
 const ENTER_ANIMATION_MS = 280;
 const ENTER_SLIDE_PX = 24;

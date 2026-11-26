@@ -6,17 +6,17 @@ Cinnamon desklet: Google Calendar month grid / 7-column week + Google Tasks. Pub
 ## Map
 | Path | What |
 |---|---|
-| `gcal-month-week@osobno/desklet.js` | lifecycle, header, navigation, fetch subprocess, cache, timer |
-| `gcal-month-week@osobno/views.js` | St widgets for month cells and week columns (drawing only) |
-| `gcal-month-week@osobno/layout.js` | pure date/size/fit logic, CommonJS, tested with Node |
-| `gcal-month-week@osobno/fetch.py` | Google Calendar + Tasks → normalised JSON on stdout (stdlib only) |
-| `gcal-month-week@osobno/authorize.py` | one-time OAuth (loopback + PKCE) → `~/.config/gcal-desklet/token.json` |
+| `gcal-month-week@danielvazdar/desklet.js` | lifecycle, header, navigation, fetch subprocess, cache, timer |
+| `gcal-month-week@danielvazdar/views.js` | St widgets for month cells and week columns (drawing only) |
+| `gcal-month-week@danielvazdar/layout.js` | pure date/size/fit logic, CommonJS, tested with Node |
+| `gcal-month-week@danielvazdar/fetch.py` | Google Calendar + Tasks → normalised JSON on stdout (stdlib only) |
+| `gcal-month-week@danielvazdar/authorize.py` | one-time OAuth (loopback + PKCE) → `~/.config/gcal-desklet/token.json` |
 | `install.sh` | symlinks the desklet folder into `~/.local/share/cinnamon/desklets/` |
 
 ## Commands
 - Tests: `.venv/bin/pytest -q tests && .venv/bin/ruff check . && node --test tests/*.test.js`
-- Types: `.venv/bin/mypy --ignore-missing-imports gcal-month-week@osobno/fetch.py gcal-month-week@osobno/authorize.py`
-- Reload: `gdbus call --session --dest org.Cinnamon --object-path /org/Cinnamon --method org.Cinnamon.ReloadXlet 'gcal-month-week@osobno' 'DESKLET'`
+- Types: `.venv/bin/mypy --ignore-missing-imports gcal-month-week@danielvazdar/fetch.py gcal-month-week@danielvazdar/authorize.py`
+- Reload: `gdbus call --session --dest org.Cinnamon --object-path /org/Cinnamon --method org.Cinnamon.ReloadXlet 'gcal-month-week@danielvazdar' 'DESKLET'`
 - Logs: `~/.xsession-errors` (grep `gcal`)
 - See it under windows: Eval `global.display.set_desklets_above(true)`, screenshot, then `false`.
   Never `deskletContainer.toggle()` (modal grab).
